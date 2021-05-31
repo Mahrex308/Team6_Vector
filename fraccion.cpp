@@ -14,8 +14,28 @@ Fraccion::Fraccion(int num, int denom)
 
 }
 
-void Fraccion::reduccion(int &,int &)
+void Fraccion::reduccion(int N&,int D&)
 {
+    numerador = N;
+
+    denominador = D;
+
+    if((numerador<0)&&(denominador<0))
+    {
+        numerador = numerador * (-1);
+
+        denominador = denominador * (-1);
+
+    }
+    else
+    {
+        if((numerador>=0)&&(denominador<0))
+        {
+            numerador = numerador * (-1);
+
+            denominador = denominador * (-1);
+        }
+    }
 
 }
 
