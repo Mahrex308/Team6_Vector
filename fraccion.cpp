@@ -55,6 +55,14 @@ Fraccion::Fraccion suma(Fraccion f2)
 
 }
 
+Fraccion Fraccion::resta(Fraccion farg){
+    int num = numerador * farg.getDenominador() -  denominador * farg.getNumerador();
+    int den = denominador * farg.getDenominador();
+    Fraccion fresultado(num,den);
+    return fresultado;
+}
+
+
 Fraccion::Fraccion multiplicacion(Fraccion f2)
 {
     int n_prod, d_prod, num_r, denom_r;
@@ -68,6 +76,14 @@ Fraccion::Fraccion multiplicacion(Fraccion f2)
     denom_r = d_prod;
 
 }
+
+Fraccion Fraccion::multiplicacion(int n){
+    int num = numerador * n;
+    Fraccion fresultado(num,denominador);
+    return fresultado;  
+}
+
+
 
 void Fraccion::imprimir()
 {
