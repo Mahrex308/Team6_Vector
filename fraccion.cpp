@@ -36,22 +36,42 @@ void Fraccion::reduccion(int N&,int D&)
             denominador = denominador * (-1);
         }
     }
+    
+    
 
 }
 
-Fraccion::Fraccion suma(Fraccion)
+Fraccion::Fraccion suma(Fraccion f2)
 {
+    int n_s, d_s, num_r, denom_r;
+    
+    
+    
+    
+    num_r = n_s;
+
+    denom_r = d_s;
+    
 
 }
 
-Fraccion::Fraccion multiplicacion(Fraccion)
+Fraccion::Fraccion multiplicacion(Fraccion f2)
 {
+    int n_prod, d_prod, num_r, denom_r;
+
+    n_prod = f1.numerador * f2.numerador;
+
+    d_prod = f1.denominador * f2.denominador;
+
+    num_r = n_prod;
+
+    denom_r = d_prod;
 
 }
 
 void Fraccion::imprimir()
 {
-
+    cout<< "Resultado: "<< num_r << "/" << denom_r<<endl;
 }
 
 int Fraccion::getNumerador()
