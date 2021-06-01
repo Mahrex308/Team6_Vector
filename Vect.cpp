@@ -85,7 +85,7 @@ Fraccion Vect::operator *(Vect vec2){
 
 //Producto Cruz
 Vect Vect::producto(Vect v2){
-    if ((tamano ==3) || (v2.getTamano() == 3)){
+    if ((tamano ==3) && (v2.getTamano() == 3)){
         Fraccion x1 = componentes[0];
         Fraccion y1 = componentes[1];
         Fraccion z1 = componentes[2];
