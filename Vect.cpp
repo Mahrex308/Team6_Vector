@@ -138,11 +138,13 @@ float Vect::magnitud(){
     return sqrt(mag);
 }
 
+
 //Multiplicacion con escalar
-Vect Vect::producto(int n){
+Vect Vect::producto(float n){
+    Fraccion f1 = Fraccion(n*100000, 100000);
     Vect newVect(tamano);
     for (int i=0; i<tamano; i++){
-            newVect.setFraccion(i, componentes[i].multiplicacion(n));
+            newVect.setFraccion(i, componentes[i].multiplicacion(f1));
     }
     return  newVect;
 
