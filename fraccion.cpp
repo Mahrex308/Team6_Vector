@@ -113,3 +113,7 @@ void Fraccion::setDenominador(int denom)
     denominador = denom;
 
 }
+
+float Fraccion::decimal(){
+    return (float)numerador/ (float)denominador; 
+}
