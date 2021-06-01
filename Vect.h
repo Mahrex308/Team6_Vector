@@ -22,7 +22,7 @@ public:
     virtual Vect producto(Vect);
     float angulo(Vect);
     float magnitud();
-    Vect producto(int);
+    Vect producto(float);
     void print();
     
 };
