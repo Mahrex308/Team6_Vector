@@ -1,4 +1,4 @@
-#include "fraccion.h"
+#include "Fraccion.h"
 
 Fraccion::Fraccion()
 {
