@@ -66,7 +66,7 @@ void Fraccion::reduccion(int &num,int &den)
 
 
 
-Fraccion::Fraccion suma(Fraccion f2)
+Fraccion Fraccion::suma(Fraccion f2)
 {
     int n_s, d_s;
     
@@ -89,7 +89,7 @@ Fraccion Fraccion::resta(Fraccion farg){
 }
 
 
-Fraccion::Fraccion multiplicacion(Fraccion f2)
+Fraccion Fraccion::multiplicacion(Fraccion f2)
 {
     int n_prod, d_prod;
 
