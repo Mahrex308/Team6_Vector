@@ -45,8 +45,9 @@ Fraccion::Fraccion suma(Fraccion f2)
 {
     int n_s, d_s, num_r, denom_r;
     
-    
-    
+    n_s = (f1.numerador * f2.denominador) + (f1.denominador * f2.numerador);
+
+    d_s = f1.denominador * f2.denominador;
     
     num_r = n_s;
 
