@@ -14,7 +14,7 @@ Fraccion::Fraccion(int num, int denom)
 
 }
 
-void Fraccion::reduccion(int N&,int D&)
+void Fraccion::reduccion(int &N,int &D)
 {
     numerador = N;
 
