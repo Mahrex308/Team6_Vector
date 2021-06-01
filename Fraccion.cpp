@@ -1,4 +1,6 @@
 #include "Fraccion.h"
+#include <iostream>
+using namespace std;
 
 Fraccion::Fraccion()
 {
