@@ -141,8 +141,6 @@ int main(){
     cout << "Angulo entre vectores: " << v1.angulo(v3) << endl;
 
     return 0;
-
-;
     
   
-}
+};
