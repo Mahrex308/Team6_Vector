@@ -9,49 +9,71 @@ Fraccion::Fraccion()
 
 Fraccion::Fraccion(int num, int denom)
 {
+   if(den == 0)
+        den = 1;
+    // ambos negativos o unicamente denominador negativo, entonces cambio signo en ambos
+    // La expresion completa sería den < 0 && num < 0 || num > 0 && den < 0
+    // Sin embargo, tienen en comun que si el denominador es negativo, cambio el signo en ambos 
+    if(den < 0 ){ 
+        num = -num;
+        den = -den;
+    }
+    reduccion(num,den);
     numerador = num;
-    denominador = denom;
+    denominador = den;
 
 }
 
-void Fraccion::reduccion(int &N,int &D)
+void Fraccion::reduccion(int &num,int &den)
 {
-    numerador = N;
-
-    denominador = D;
-
-    if((numerador<0)&&(denominador<0))
-    {
-        numerador = numerador * (-1);
-
-        denominador = denominador * (-1);
-
+// Variables auxiliares
+    int limit = 0;
+    int signo1 = 1;
+    int signo2 = 1;
+    // Guarda el signo en las variables signoX y deja num y den sin signo.
+    // Esto se hace para que las operaciones modulo y limite esten correctas logicamente
+    if(num < 0){
+        signo1 = -1;
+        num = num*signo1;
     }
+    if(den < 0){
+        signo2 = -1;
+        den = den*signo2;
+    }
+    // La variable limite es la menor entre el denominador y el numerador
+    // Sirve como criterio de parada al identificar un posible maximo comun divisor.
+    if(num >= den)
+        limit = den; 
     else
-    {
-        if((numerador>=0)&&(denominador<0))
-        {
-            numerador = numerador * (-1);
-
-            denominador = denominador * (-1);
+        limit = num;
+    int it = 2;
+    while(it<=limit){
+        if(num % it == 0 && den % it == 0){
+            num = num/it;
+            den = den/it;
+        }else{
+            it++;
         }
     }
-    
-    
+    // Devolvemos los signos del numerador y denominador (en caso de que exista cambio)
+    num = num*signo1;
+    den = den*signo2;
+   
 
 }
+
+
 
 Fraccion::Fraccion suma(Fraccion f2)
 {
-    int n_s, d_s, num_r, denom_r;
+    int n_s, d_s;
     
-    n_s = (f1.numerador * f2.denominador) + (f1.denominador * f2.numerador);
+    n_s = (numerador * f2.denominador) + (denominador * f2.numerador);
 
-    d_s = f1.denominador * f2.denominador;
+    d_s = denominador * f2.denominador;
     
-    num_r = n_s;
-
-    denom_r = d_s;
+   Fraccion fresultado(n_s,d_s);
+    return fresultado;  
     
 
 }
@@ -67,15 +89,14 @@ Fraccion Fraccion::resta(Fraccion farg){
 
 Fraccion::Fraccion multiplicacion(Fraccion f2)
 {
-    int n_prod, d_prod, num_r, denom_r;
+    int n_prod, d_prod;
 
-    n_prod = f1.numerador * f2.numerador;
+    n_prod = numerador * f2.numerador;
 
-    d_prod = f1.denominador * f2.denominador;
+    d_prod = denominador * f2.denominador;
+    Fraccion fresultado(n_prod,d_prod);
+    return fresultado; 
 
-    num_r = n_prod;
-
-    denom_r = d_prod;
 
 }
 
@@ -89,7 +110,7 @@ Fraccion Fraccion::multiplicacion(int n){
 
 void Fraccion::imprimir()
 {
-    cout<< "Resultado: "<< num_r << "/" << denom_r<<endl;
+    cout<< numerador << "/" << denominador <<endl;
 }
 
 int Fraccion::getNumerador()
