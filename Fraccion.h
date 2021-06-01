@@ -10,7 +10,7 @@ public:
     Fraccion(int, int);
     void reduccion(int &,int &);
     Fraccion suma(Fraccion);
-    Fraccion resta (Fraccion);
+    Fraccion resta(Fraccion);
     virtual Fraccion multiplicacion(Fraccion);
     void imprimir();
     int getNumerador();
