@@ -11,18 +11,18 @@ Fraccion::Fraccion()
 
 Fraccion::Fraccion(int num, int denom)
 {
-   if(den == 0)
-        den = 1;
+   if(denom == 0)
+        denom = 1;
     // ambos negativos o unicamente denominador negativo, entonces cambio signo en ambos
     // La expresion completa sería den < 0 && num < 0 || num > 0 && den < 0
     // Sin embargo, tienen en comun que si el denominador es negativo, cambio el signo en ambos 
-    if(den < 0 ){ 
+    if(denom < 0 ){ 
         num = -num;
-        den = -den;
+        denom = -denom;
     }
-    reduccion(num,den);
+    reduccion(num,denom);
     numerador = num;
-    denominador = den;
+    denominador = denom;
 
 }
 
