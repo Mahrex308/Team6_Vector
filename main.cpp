@@ -63,9 +63,9 @@ int main(){
     cout << "Magnitud del vector 2: " << v2.magnitud() << endl;
 
     cout << "" << endl;
-
-    cout << "Escalamiento del vector 1 con 5:" << endl;
-    Vect v7 = v1.producto(5);
+    
+    cout << "Escalamiento del vector 1 con 5.8:" << endl;
+    Vect v7 = v1.producto(5.8);
     v7.print();
 
     cout << "" << endl;
