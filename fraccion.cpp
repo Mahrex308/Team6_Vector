@@ -61,6 +61,7 @@ Fraccion Fraccion::resta(Fraccion farg){
     int den = denominador * farg.getDenominador();
     Fraccion fresultado(num,den);
     return fresultado;
+    
 }
 
 
