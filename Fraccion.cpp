@@ -102,13 +102,6 @@ Fraccion Fraccion::multiplicacion(Fraccion f2)
 
 }
 
-Fraccion Fraccion::multiplicacion(int n){
-    int num = numerador * n;
-    Fraccion fresultado(num,denominador);
-    return fresultado;  
-}
-
-
 
 void Fraccion::imprimir()
 {
